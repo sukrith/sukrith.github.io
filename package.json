@@ -1,0 +1,24 @@
+{
+  "name": "sukrith.github.io",
+  "version": "1.0.0",
+  "description": "Aerial by HTML5 UP\r html5up.net | @ajlkn\r Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sukrith/sukrith.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sukrith/sukrith.github.io/issues"
+  },
+  "homepage": "https://github.com/sukrith/sukrith.github.io#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
