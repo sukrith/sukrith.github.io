@@ -13,9 +13,28 @@ body {
     background-color: #f5e6ce;
 }
 
+.card {
+    border: 3px dotted #c21f1f;
+    /* border-radius: 18px; */
+    padding: 2.5rem 3rem;
+    max-width: 600px;
+    width: min(90vw, 600px);
+    background-color: #f4f3e8;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02);
+}
+
 h1 {
     color: #c21f1f;
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 500;
+    font-family: 'Helvetica', sans-serif;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #c21f1f;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
