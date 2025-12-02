@@ -25,9 +25,8 @@ body {
 
 .card {
     border: 1.5px dashed #c21f1f;
-    /* border-radius: 18px; */
     padding: 2.5rem 3rem;
-    max-width: 600px;
+    /* max-width: 600px; */
     width: min(90vw, 600px);
     background-color: #f4f3e8;
     text-align: center;
