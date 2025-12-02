@@ -113,18 +113,17 @@ li a:hover {
 }
 
 .footer-text {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: space-between;
-    padding: 0.25rem;
+    width: min(90vw, 600px);
+    max-width: 600px;
+    padding: 0.25rem 0;
+    margin-top: 1rem;
 }
 
-.footer-left,
-.footer-right {
+.footer-text p {
     color: #c21f1f;
-    font-size: 0.5rem;
+    font-size: 1rem;
+    margin: 0;
 }
 
