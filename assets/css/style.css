@@ -24,7 +24,7 @@ body {
 }
 
 .card {
-    border: 3px dotted #c21f1f;
+    border: 1.5px dashed #c21f1f;
     /* border-radius: 18px; */
     padding: 2.5rem 3rem;
     max-width: 600px;
@@ -44,7 +44,6 @@ h1 {
 
 p {
     color: #c21f1f;
-    font-size: 1.1rem;
     line-height: 1.6;
 }
 
@@ -127,6 +126,6 @@ li a:hover {
 .footer-left,
 .footer-right {
     color: #c21f1f;
-    font-size: 1rem;
+    font-size: 0.5rem;
 }
 
