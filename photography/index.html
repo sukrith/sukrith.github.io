@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - Sukrith Akula</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        .photography-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 0 0 2rem 2rem;
+            color: #c21f1f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+        
+        .album-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        
+        .album-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .album-cover {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .album-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .album-title {
+            margin: 0;
+            color: #c21f1f;
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        @media (max-width: 768px) {
+            .albums-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">← Back to Home</a>
+    <div class="photography-container">
+        <h1>Photo Albums</h1>
+        <div class="albums-grid" id="albumsGrid">
+            <!-- Albums will be added here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="close-btn" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="" class="lightbox-content">
+    </div>
+
+    <script>
+        // Sample album data - update with your actual photos
+        const albums = [
+            {
+                name: "Summer 2023",
+                cover: "/assets/photos/summer-2023/cover.jpg",
+                photos: [
+                    "/assets/photos/summer-2023/photo1.jpg",
+                    "/assets/photos/summer-2023/photo2.jpg"
+                ]
+            },
+            {
+                name: "Travel",
+                cover: "/assets/photos/travel/cover.jpg",
+                photos: [
+                    "/assets/photos/travel/photo1.jpg",
+                    "/assets/photos/travel/photo2.jpg"
+                ]
+            }
+        ];
+
+        // Create album cards
+        function createAlbumCards() {
+            const albumsGrid = document.getElementById('albumsGrid');
+            
+            albums.forEach(album => {
+                const albumCard = document.createElement('div');
+                albumCard.className = 'album-card';
+                albumCard.innerHTML = `
+                    <img src="${album.cover}" alt="${album.name}" class="album-cover" loading="lazy">
+                    <div class="album-info">
+                        <h3 class="album-title">${album.name}</h3>
+                    </div>
+                `;
+                
+                albumCard.addEventListener('click', () => showAlbumPhotos(album));
+                albumsGrid.appendChild(albumCard);
+            });
+        }
+
+        // Show photos in a grid
+        function showAlbumPhotos(album) {
+            const container = document.querySelector('.photography-container');
+            container.innerHTML = `
+                <a href="#" class="back-link" id="backToAlbums">← Back to Albums</a>
+                <h1>${album.name}</h1>
+                <div class="albums-grid" id="photoGrid"></div>
+            `;
+
+            const photoGrid = document.getElementById('photoGrid');
+            album.photos.forEach((photo, index) => {
+                const photoItem = document.createElement('div');
+                photoItem.className = 'album-card';
+                photoItem.innerHTML = `
+                    <img src="${photo}" 
+                         alt="${album.name} - Photo ${index + 1}" 
+                         class="album-cover"
+                         loading="lazy">
+                `;
+                
+                photoItem.addEventListener('click', () => openLightbox(photo));
+                photoGrid.appendChild(photoItem);
+            });
+
+            // Add back button functionality
+            document.getElementById('backToAlbums').addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.reload();
+            });
+        }
+
+        // Lightbox functions
+        function openLightbox(src) {
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('lightbox')) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', createAlbumCards);
+    </script>
+</body>
+</html>
