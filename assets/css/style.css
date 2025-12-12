@@ -204,9 +204,17 @@ li a:hover {
 
 .footer-text p {
     color: #c21f1f;
-    font-size: 1rem;
-    margin: 0;
-    width: auto;
     padding: 0 1rem;
 }
 
+.right-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.left-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
