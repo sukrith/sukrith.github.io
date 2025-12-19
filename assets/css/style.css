@@ -74,8 +74,10 @@ nav {
     margin: 0 5%;
     border: 1.5px dashed #c21f1f;
     padding: 2.5rem 3rem;
-    background-color: #f4f3e8;
+    background-color: #f5e6ce;
+    border-radius: 1.5rem;
     text-align: left;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
 }
 
 .about-content {
@@ -200,6 +202,7 @@ li a:hover {
     padding: 1rem 0;
     margin-top: auto;
     text-align: center;
+    color: #f5e6ce;
 }
 
 .footer-text p {
