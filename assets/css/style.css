@@ -38,9 +38,8 @@ body {
 
 
 .home-image {
-    flex: 0 1 400px;
     width: 40%;
-    height: auto;
+    height: 40%;
 }
 @media (max-width: 600px) {
   .card {
@@ -136,8 +135,6 @@ nav a {
     text-decoration: none;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    /* border: 1px dotted #c21f1f; */
-    /* border-radius: 4px; */
     transition: all 0.3s ease;
     text-align: center;
 }
