@@ -27,7 +27,7 @@ body {
 }
 
 .card {
-    flex: 0 1 500px;
+    width: 50%;
     border: 1.5px dashed #c21f1f;
     padding: 2.5rem 3rem;
     background-color: #f4f3e8;
@@ -35,17 +35,25 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02);
 }
 
+
+
 .home-image {
     flex: 0 1 400px;
-    max-width: 40%;
+    width: 40%;
     height: auto;
+}
+@media (max-width: 600px) {
+  .card {
+    width: 80%;
+  }
+  .home-image {
+    width: 60%;
+  }
 }
 
 .card {
     border: 1.5px dashed #c21f1f;
     padding: 2.5rem 3rem;
-    /* max-width: 600px; */
-    width: min(90vw, 600px);
     background-color: #f4f3e8;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02);
@@ -53,7 +61,7 @@ body {
 
 h1 {
     color: #c21f1f;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
     font-family: 'Helvetica', sans-serif;
     margin-bottom: 1rem;
@@ -74,8 +82,6 @@ nav {
     margin: 0 5%;
     border: 1.5px dashed #c21f1f;
     padding: 2.5rem 3rem;
-    background-color: #f5e6ce;
-    border-radius: 1.5rem;
     text-align: left;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
 }
