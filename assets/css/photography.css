@@ -1,0 +1,74 @@
+.back-link-container {
+  position: absolute;
+  top: 0.5rem;
+  left: 2rem;
+}
+
+/* Photography Albums Grid Styles */
+.album-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  /* margin-top: 2rem; */
+  border: 1.5px dashed #c21f1f;
+  /* border-radius: 1.5rem; */
+  padding: 2.5rem 3rem;
+  background: none;
+}
+.album-item {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: none;
+}
+.album-item:hover {
+  transform: none;
+  box-shadow: none;
+}
+.album-cover {
+  width: 60%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  /* border-radius: 0.8rem; */
+  margin-bottom: 1rem;
+  background: #e9e9e9;
+}
+.photo-thumb {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  background: #e9e9e9;
+  cursor: pointer;
+}
+
+#album-title {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: #c21f1f;
+}
+
+.album-title {
+  font-size: 1rem;
+  color: #c21f1f;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.album-subtitle {
+  font-size: 0.8rem;
+  color: #c21f1f;
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 0.2rem;
+}
