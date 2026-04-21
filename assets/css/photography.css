@@ -72,3 +72,21 @@
   text-align: center;
   margin-top: 0.2rem;
 }
+
+@media (max-width: 600px) {
+  .album-grid {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .album-cover {
+    width: 80%;
+  }
+
+  .back-link-container {
+    position: static;
+    padding: 1rem 0 0 1rem;
+    align-self: flex-start;
+  }
+}

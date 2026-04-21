@@ -73,6 +73,10 @@ p {
 
 nav {
     margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
 }
 
 /* About page styles */
@@ -108,6 +112,7 @@ nav {
     .main-container {
         flex-direction: column;
         gap: 1.5rem;
+        max-width: 95%;
     }
     
     .about-card {
