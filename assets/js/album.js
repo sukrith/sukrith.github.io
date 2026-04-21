@@ -33,11 +33,12 @@ async function renderPhotos() {
   }
   const folder = data.folder || albumJsonName();
   data.photos.forEach(filename => {
-    const src = `/photography/${folder}/${filename}`;
+    const thumbSrc = `/photography/thumbnails/${folder}/${filename}`;
+    const fullSrc = `/photography/${folder}/${filename}`;
     const div = document.createElement('div');
     div.className = 'album-item';
-    div.innerHTML = `<img class="photo-thumb" src="${src}" alt="${filename}">`;
-    div.onclick = () => openLightbox(src, filename);
+    div.innerHTML = `<img class="photo-thumb" src="${thumbSrc}" alt="${filename}">`;
+    div.onclick = () => openLightbox(fullSrc, filename);
     grid.appendChild(div);
   });
 }

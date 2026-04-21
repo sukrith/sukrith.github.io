@@ -1,7 +1,11 @@
 // Hardcoded list of JSON files for albums
 const albumJsonFiles = [
   '/photography/sam-and-divina-wedding.json',
-  '/photography/golden-triangle.json'
+  '/photography/golden-triangle.json',
+  '/photography/old-trafford.json',
+  '/photography/sunset-park.json',
+  '/photography/movement-junkies.json',
+  '/photography/kew-gardens.json'
 ];
 
 async function fetchAlbumJson(jsonPath) {
@@ -12,7 +16,7 @@ async function fetchAlbumJson(jsonPath) {
     name: data.title,
     subtitle: data.subtitle || '',
     date: data.date || '',
-    cover: `/photography/${data.folder}/${data.photos[0]}`,
+    cover: `/photography/thumbnails/${data.folder}/${data.photos[0]}`,
     path: `/photography/album.html#${jsonPath}`
   };
 }
